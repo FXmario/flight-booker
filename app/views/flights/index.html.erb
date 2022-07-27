@@ -1,0 +1,31 @@
+<h1 class="text-center mb-5">
+	Flights Booker
+</h1>
+
+<div class="container">
+	<%= form_with(url: "/flights", method: :get, data: { turbo_frame: "flights" }) do |f| %>
+		<div class="col-md-3 me-auto">
+			<div class="row">
+				<div class="col">
+					<%= f.label :depature, style: "display: block", class: "form-label" %>
+					<%= f.collection_select(:depature_flight_id, Airport.all, :id, :code, {}, { class: "form-select" } ) %>
+				</div>
+				<div class="col mb-3">
+					<%= f.label :arrival, style: "display: block", class: "form-label" %>
+					<%= f.collection_select(:arrival_airport_id, Airport.all, :id, :code, {}, { class: "form-select" } ) %>
+				</div>
+			</div>
+			<div class="mb-3">
+				<%= f.label :Start_Flight, style: "display: block", class: "form-label" %>
+				<%= f.datetime_field :start, class: "form-control" %>
+			</div>
+			<div class="mb-3">
+				<%= f.label :duration, style: "display: block", class: "form-label" %>
+				<%= f.number_field :duration, class: "form-control" %>
+			</div>
+			<div class="mb-3 d-grid gap-2">
+				<%= f.submit value: "Search Flights", class: "btn btn-outline-success" %>
+			</div>
+		</div>
+	<% end %>
+</div>
