@@ -11,4 +11,7 @@ Airport.create([{
 },
 {
 	code: "HND"
+},
+{
+	code: "NRT"
 }])

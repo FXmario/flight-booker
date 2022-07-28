@@ -8,20 +8,21 @@
 			<div class="row">
 				<div class="col">
 					<%= f.label :depature, style: "display: block", class: "form-label" %>
-					<%= f.collection_select(:depature_flight_id, Airport.all, :id, :code, {}, { class: "form-select" } ) %>
+					<%= f.collection_select(:depature_airport, Airport.all, :id, :code, {}, { class: "form-select" } ) %>
 				</div>
 				<div class="col mb-3">
 					<%= f.label :arrival, style: "display: block", class: "form-label" %>
-					<%= f.collection_select(:arrival_airport_id, Airport.all, :id, :code, {}, { class: "form-select" } ) %>
+					<%= f.collection_select(:arrival_airport, Airport.all, :id, :code, {}, { class: "form-select" } ) %>
 				</div>
 			</div>
 			<div class="mb-3">
-				<%= f.label :Start_Flight, style: "display: block", class: "form-label" %>
-				<%= f.datetime_field :start, class: "form-control" %>
+				<%= f.label :start_time, style: "display: block", class: "form-label" %>
+				<%= f.date_field :start, class: "form-control" %>
 			</div>
 			<div class="mb-3">
-				<%= f.label :duration, style: "display: block", class: "form-label" %>
-				<%= f.number_field :duration, class: "form-control" %>
+				<%= f.label :end_flight, style: "display: block
+				", class: 'form-label' %>
+				<%= f.date_field :end_flight, class: "form-control" %>
 			</div>
 			<div class="mb-3 d-grid gap-2">
 				<%= f.submit value: "Search Flights", class: "btn btn-outline-success" %>
