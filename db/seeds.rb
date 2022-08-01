@@ -149,18 +149,6 @@ Flight.create([{
 	depature_airport_id: 2, arrival_airport_id: 1, airlines: "Garuda Indonesia", start: "31 July 2022"
 },
 {
-	depature_airport_id: 2, arrival_airport_id: 1, airlines: "All Nippon airliness", start: "31 July 2022"
-},
-{
-	depature_airport_id: 2, arrival_airport_id: 3, airlines: "Fly Emirates", start: "31 July 2022"
-},
-{
-	depature_airport_id: 2, arrival_airport_id: 3, airlines: "Garuda Indonesia", start: "31 July 2022"
-},
-{
-	depature_airport_id: 2, arrival_airport_id: 3, airlines: "All Nippon airliness", start: "31 July 2022"
-},
-{
 	depature_airport_id: 3, arrival_airport_id: 1, airlines: "Fly Emirates", start: "31 July 2022"
 },
 {
