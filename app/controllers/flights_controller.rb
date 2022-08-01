@@ -3,14 +3,18 @@ class FlightsController < ApplicationController
 	def index
 		@no = 0
 
-		if params[:start].present? && params[:depature_airport].present? && params[:arrival_airport].present?
-			@flights = Flight.where(flight_params)
-		elsif params[:depature_airport] == params[:arrival_airport]
-			flash.now[:alert] = "Check your depature and arrival airport"
-		elsif params[:start].empty?
-			flash.now[:alert] = "Start date can't be empty"
-		else
-			flash.npw[:notice] = "Please search the flights"
+		if flights_params.present?
+			if params[:depature_airport].blank?
+				flash.now[:alert] = "Please check your depature airport"
+			elsif params[:arrival_airport].blank?
+				flash.now[:alert] = 'Please check your arrival airport'
+			elsif params[:start].blank?
+				flash.now[:alert] = "Please check your flight date"
+			elsif params[:depature_airport] == params[:arrival_airport]
+				flash.now[:alert] = "Depature and arrival airport can't be the same"
+			else
+				@flights = Flight.where(flights_params)
+			end
 		end
 
 		if turbo_frame_request?
@@ -21,7 +25,7 @@ class FlightsController < ApplicationController
 	end
 
 	private
-		def flight_params
-			params.require(:flight).permit(:depature_airport, :arrival_airport, :start)
+		def flights_params
+			params.permit(:depature_airport, :arrival_airport, :start)
 		end
 end

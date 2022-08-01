@@ -1,5 +1,5 @@
 <br>
-<h1 class="text-center mb-5">
+<h1 class="text-center mb-4">
 	Flights Booker
 </h1>
 
@@ -7,22 +7,22 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col col-md-4">
+		<div class="col col-md-5 text-center">
 			<div class="row">
-				<%= form_with(url: "/flights", method: :get, data: { turbo_frame: "flights" }) do |f| %>
+				<%= form_with(url: root_path, method: :get, data: { turbo_frame: "flights" } ) do |f| %>
 					<div class="row">
 						<div class="col">
 						<%= f.label :depature, style: "display: block", class: "form-label" %>
-						<%= f.collection_select(:depature_airport, Airport.all, :id, :code, {}, { class: "form-select" } ) %>
+						<%= f.collection_select(:depature_airport, Airport.all, :id, :code, { prompt: "Select depature airport" }, { class: "form-select" } ) %>
 						</div>
-						<div class="col">
+						<div class="col mb-3">
 							<%= f.label :arrival, style: "display: block", class: "form-label" %>
-							<%= f.collection_select(:arrival_airport, Airport.all, :id, :code, {}, { class: "form-select" } ) %>
+							<%= f.collection_select(:arrival_airport, Airport.all, :id, :code, { prompt: "Select arrival aiport" }, { class: "form-select" } ) %>
 						</div>
 					</div>
 					<div class="mb-3">
 						<%= f.label :flight_date, style: "display: block", class: "form-label" %>
-						<%= f.collection_select(:start, Flight.select(:start).distinct.order(:start), :id, :start , {}, { class: "form-select" } ) %>
+						<%= f.collection_select(:start, Flight.select(:start).distinct.order(:start), :start, :start, { prompt: "Select flight date" }, { class: "form-select" } ) %>
 					</div>
 					<div class="mb-3 d-grid gap-2">
 						<%= f.submit value: "Search Flights", class: "btn btn-outline-success" %>
@@ -31,8 +31,8 @@
 			</div>
 		</div>
 		<div class="col ms-auto">
-			<% if @flight %>
-				<table class="table table-hover table-bordered able-responsive">
+			<% if @flights.present? %>
+				<table class="table table-hover table-bordered table-responsive">
 					<thead>
 						<tr class="text-center">
 							<td scope="col">#</td>
@@ -43,7 +43,7 @@
 					</thead>
 					<tbody class="tabel-group-divider">
 						<tr class="text-center">
-							<% @flight.each do |flight| %>
+							<% @flights.each do |flight| %>
 								<td><%= @no += 1 %></td>
 								<td><%= flight.depature_airport.code %></td>
 								<td><%= flight.arrival_airport.code %></td>
@@ -54,8 +54,8 @@
 				</table>
 			<% else %>
 				<h1 class="text-center">
-					Flights not found!
-				</h1> 
+					There is no flights schedule.
+				</h1>
 			<% end %>
 		</div>
 	</div>
