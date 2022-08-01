@@ -20,17 +20,53 @@ Flight.create([{
 	depature_airport_id: 1, arrival_airport_id: 2, start: "29 July 2022"
 },
 {
-	depature_airport_id: 1, arrival_airport_id: 5, start: "29 July 2022"
+	depature_airport_id: 1, arrival_airport_id: 3, start: "29 July 2022"
+},
+{
+	depature_airport_id: 2, arrival_airport_id: 1, start: "29 July 2022"
+},
+{
+	depature_airport_id: 2, arrival_airport_id: 3, start: "29 July 2022"
+},
+{
+	depature_airport_id: 3, arrival_airport_id: 1, start: "29 July 2022"
+},
+{
+	depature_airport_id: 3, arrival_airport_id: 2, start: "29 July 2022"
+},
+{
+	depature_airport_id: 1, arrival_airport_id: 2, start: "30 July 2022"
+},
+{
+	depature_airport_id: 1, arrival_airport_id: 3, start: "30 July 2022"
 },
 {
 	depature_airport_id: 2, arrival_airport_id: 1, start: "30 July 2022"
 },
 {
-	depature_airport_id: 2, arrival_airport_id: 5, start: "30 July 2022"
+	depature_airport_id: 2, arrival_airport_id: 3, start: "30 July 2022"
 },
 {
-	depature_airport_id: 5, arrival_airport_id: 1, start: "31 July 2022"
+	depature_airport_id: 3, arrival_airport_id: 1, start: "30 July 2022"
 },
 {
-	depature_airport_id: 5, arrival_airport_id: 2, start: "31 July 2022"
+	depature_airport_id: 3, arrival_airport_id: 2, start: "30 July 2022"
+},
+{
+	depature_airport_id: 1, arrival_airport_id: 2, start: "31 July 2022"
+},
+{
+	depature_airport_id: 1, arrival_airport_id: 3, start: "31 July 2022"
+},
+{
+	depature_airport_id: 2, arrival_airport_id: 1, start: "31 July 2022"
+},
+{
+	depature_airport_id: 2, arrival_airport_id: 3, start: "31 July 2022"
+},
+{
+	depature_airport_id: 3, arrival_airport_id: 1, start: "31 July 2022"
+},
+{
+	depature_airport_id: 3, arrival_airport_id: 2, start: "31 July 2022"
 }])
