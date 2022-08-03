@@ -35,6 +35,7 @@
 							<th scope="col">Arrives</th>
 							<th scope="col">Airlines</th>
 							<th scope="col">Date</th>
+							<th scope="col">Misc</th>
 						</tr>
 					</thead>
 					<% @flights.each do |flight| %>
@@ -45,6 +46,9 @@
 								<td><%= flight.arrival_airport.code %></td>
 								<td><%= flight.airlines %></td>
 								<td><%= flight.start %></td>
+								<td>
+									<%= link_to "Book this flight", flight, class: "btn btn-outline-success" %>
+								</td>
 							</tr>
 						</tbody>
 					<% end %>
