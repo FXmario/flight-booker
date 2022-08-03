@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a part of <a href="https://www.theodinproject.com/lessons/ruby-on-rails-flight-booker"> The Odin Project curriculum : Flight Booker</a>
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Stack
+<ul>
+	<li><a href="https://rubyonrails.org/"> Ruby on Rails 7</a></li>
+	<li><a href="https://www.postgresql.org/"> PostgreSQL</a></li>
+	<li><a href="https://getbootstrap.com/">Bootstrap 5</a></li>
+</ul>
