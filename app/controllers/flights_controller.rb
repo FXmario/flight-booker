@@ -24,10 +24,6 @@ class FlightsController < ApplicationController
 		end
 	end
 
-	def show
-		@flight = Flight.find(params[:id])
-	end
-
 	private
 		def flights_params
 			params.permit(:depature_airport, :arrival_airport, :start)

@@ -15,9 +15,15 @@
 							<%= f.collection_select(:arrival_airport, Airport.all, :id, :code, { prompt: "Select arrival aiport" }, { class: "form-select" } ) %>
 						</div>
 					</div>
-					<div class="mb-3">
-						<%= f.label :flight_date, style: "display: block", class: "form-label" %>
-						<%= f.collection_select(:start, Flight.select(:start).distinct.order(:start), :start, :start, { prompt: "Select flight date" }, { class: "form-select" } ) %>
+					<div class="row">
+						<div class="col">
+							<%= f.label :flight_date, style: "display: block", class: "form-label" %>
+							<%= f.collection_select(:start, Flight.select(:start).distinct.order(:start), :start, :start, { prompt: "Select flight date" }, { class: "form-select" } ) %>
+						</div>
+						<div class="col mb-3">
+							<%= f.label :tickets, style: 'display: blocck', class: "form-label" %>
+							<%= f.select(:tickets, options_for_select([1,2,3,4,5,6,7]), {}, { class: "form-select" }) %>
+						</div>
 					</div>
 					<div class="mb-3 d-grid gap-2">
 						<%= f.submit value: "Search Flights", class: "btn btn-outline-success" %>
@@ -47,7 +53,11 @@
 								<td><%= flight.airlines %></td>
 								<td><%= flight.start %></td>
 								<td>
-									<%= link_to "Book this flight", flight, class: "btn btn-outline-success" %>
+									<%= form_with url: new_booking_path, method: :get, local: true do |f| %>
+										<%= f.hidden_field :flight_id, value: flight.id %>
+										<%= f.hidden_field :tickets, value: params[:tickets] %>
+										<%= f.submit "Book this flight", class: "btn btn-outline-success" %>
+									<% end %>
 								</td>
 							</tr>
 						</tbody>
@@ -61,5 +71,3 @@
 		</div>
 	</div>
 </div>
-
-	
