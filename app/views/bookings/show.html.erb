@@ -26,14 +26,14 @@
 							</div>
 						</td>
 					</tr>
-					<% @passengers.each do |passenger| %>
 					<tr>
 						<td class="fw-bold">Name </td>
-						<td>: <%= passenger.name %></td>
+						<td class="fw-bold">E-mail</td>
 					</tr>
+					<% @passengers.each do |passenger| %>
 					<tr>
-						<td class="fw-bold">E-mail </td>
-						<td>: <%= passenger.email %></td>
+						<td><%= passenger.name %></td>
+						<td><%= passenger.email %></td>
 					</tr>
 					<% end %>
 				</table>
